@@ -95,6 +95,16 @@
                 padding: 1rem 0;
             }
         }
+        
+        .avatar-circle {
+            background: linear-gradient(135deg, #4a90e2 0%, #2c3e50 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body class="bg-light">

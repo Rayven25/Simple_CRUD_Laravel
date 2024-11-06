@@ -48,9 +48,19 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        try {
+            $student = Students::findOrFail($id);
+            return view('students.show', compact('student'));
+        } catch (\Exception $e) {
+            session()->flash('swal', [
+                'title' => 'Error!',
+                'message' => 'Student not found.',
+                'icon' => 'error',
+            ]);
+            return redirect()->route('students.index');
+        }
     }
 
     /**

@@ -95,8 +95,12 @@
                                 </td>
                                 <td class="px-4 py-3">
                                     <div class="d-flex gap-2">
+                                        <a href="{{ route('students.show', $student->id) }}" 
+                                           class="btn btn-info btn-sm">
+                                            <i class="fas fa-eye me-2"></i>View
+                                        </a>
                                         <a href="{{ route('students.edit', $student->id) }}" 
-                                           class="btn btn-warning btn-sm px-3">
+                                           class="btn btn-warning btn-sm">
                                             <i class="fas fa-edit me-2"></i>Edit
                                         </a>
                                         <form id="delete-form-{{ $student->id }}" 
@@ -106,7 +110,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="button" 
-                                                    class="btn btn-danger btn-sm px-3" 
+                                                    class="btn btn-danger btn-sm" 
                                                     onclick="confirmDelete(event, 'delete-form-{{ $student->id }}')">
                                                 <i class="fas fa-trash me-2"></i>Delete
                                             </button>
